@@ -28,5 +28,5 @@ reachable(Node, Map) ->
 %Returns a list of all nodes in the map, also the ones
 %without outgoing links
 all_nodes(Map) ->
-	AuxMap = lists:flatmap(fun({Node,Links}) -> [Node|Links] end, Map),
-	lists:usort(NewMap).
+	AuxMap = lists:flatmap(fun({Node, Links}) -> [Node | Links] end, Map),
+	lists:usort(AuxMap).
