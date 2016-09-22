@@ -27,7 +27,7 @@ replace(Node, N, Gateway, Sorted) ->
 % better (shorter) path should we replace the existing entry.
 
 update(Node, N, Gateway, Sorted) -> 
-	Length = entry(Node, Sorted)
+	Length = entry(Node, Sorted),
 
 	if
 		N < Length ->
@@ -45,7 +45,7 @@ iterate(Sorted, Map, Table) ->
 			Table;
 		[{_, inf, _} | _] ->
 			Table;
-		{Entry | Tail} ->
+		[Entry | Tail] ->
 			{Node, Length, Gateway} = Entry,
 			
 			case lists:keyfind(Node, 1, Map) of
